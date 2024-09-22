@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #E5DADA; /* couleur du body */
+}
+/* mis en style du h1 */
+h1{
+  font-weight: bold; 
+  color:#fcf0e3fc;
+  text-transform: uppercase; /* en majuscule */
+  margin-left: 20px; /* un peut de marge a droite */
+  cursor: pointer;
+}
+/* mis en style du header */
+header{
+  display: flex; /* affichage flexible en ligne */
+  justify-content: space-between; /* des espace entre les element */
+  align-items: center; /* alignement par colonne centre */
+  background-color: #2C3E50;
+  position: sticky;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  color: #F7F9FA;
+}
+nav ul{
+  display: flex; /* affichage flexible en ligne */
+  justify-content: center; /* element centre */
+  align-items: center; /* alignement par colonne centre */
+}
+nav ul li{
+  list-style-type: none; /* style des liste par defaut ne sera pas appliquer*/
+  font-family: "Montserrat", sans-serif;
+}
+nav ul li a{
+  text-decoration: none; /* style des a par defaut ne sera pas appliquer*/
+  color: #F7F9FA;
+  font-size: 20px;
+  padding: 50px;
+  font-weight: bold;
+} 
+/* le moment du survol */
+nav ul li a:hover{
+  text-decoration-line: underline; /* soulignement da a */
+  color: #FF7A59;
+}
+/* mis en style du header */
+.btn{
+  padding: 15px;
+}
+.btn1, .btn2{
+  margin-left: 10px;
+  padding: 15px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #000000;
+  background-color: #E5DADA;
+}
+/* le moment du survol */
+.btn1:hover, .btn2:hover{
+  background-color: #FF7A59;
+  font-family: "Montserrat", sans-serif;
+}
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* le container sera en deux colonne */
+  gap: 100px; /* avec l'espacement de 40ps */
+  padding: 50px;
+}
+.container .description .name{
+  font-size: 34px;
+  font-family: "Roboto", sans-serif;
+}
+.MD{
+  color: #A58DFD; /* couleur de secour #4AA3DF*/
+  font-weight: bolder;
+  animation: popIn 1.5s ease-in-out;
+  display: inline-block; /* Pour assurer une animation fluide */
+
+}
+@keyframes popIn {
+  /* debut de l'animation */
+  0% {
+      opacity: 0;
+      transform: scale(0.5) rotate(-45deg);
+      color: #FF7A59;
+  }
+  /* intermediaire de l'animation */
+  50% {
+      opacity: 1;
+      transform: scale(1.2) rotate(15deg);
+      color: #FF7A59;
+  }
+  /* la fein de l'animation */
+  100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+      color: #FF7A59;
+  }
+}
+.container, .image img{
+  border-radius: 200px; /* je donne une forme rond a mon image */
+}
+.carte{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* creation de 4 colonne pour mon div carte*/
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* la mis a style de mes carte */
+.carte1, .carte2, .carte3, .carte4{
+  background: #2E4057;
+  color: #ffff;
+  padding: 10px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 1px 0px 13px 0px #2e4057c7;
+} /* je donne de lannimation a mes carte de telle sorte que sa bouge un fois dans le site*/
+ /* lors du survol*/
+.carte1:hover, .carte2:hover, .carte3:hover, .carte4:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+/* la propriete animation donne*/
+.carte1, .carte2, .carte3, .carte4 {
+  animation: cardFadeIn 1.5s ease-out;
+}
+/* le @keyframes pour definir les etapes de l'annimation*/
+@keyframes cardFadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.8);
+      box-shadow: none;
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      box-shadow: 1px 0px 13px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+/* la mis en style de mes titre h2 */
+.h2{
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+}
+/* la mis en style de mes titre h2 */
+.catre_btn{
+  margin: 10px;
+  padding: 10px;
+  background: #E5DADA;
+  border-radius: 20px; /* je donne la forme ellipse à carte_btn*/
+}
+/* au moment du survol */
+.catre_btn:hover{
+  background-color: #FF7A59; /* la couleur va change*/
+  font-family: "Montserrat", sans-serif; /* la font-family va change */
+}
+/*la partie responsive */
+/* de 1280px à 1285px les padding vont retrecir*/
+@media (min-width: 1280px) and (max-width: 1285px) {
+  nav ul li a{
+    padding: 20px;
+  }
+  .btn{
+    padding: auto;
+  }
+}/*les style seront appliquer jusqu'a 1200px*/
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr; /* on qu'une seul colone*/
+    gap: 30px; /* un espace de 50px */
+    }
+  
+  header {
+    flex-direction: column; /* le header qui va change en colonne au lieu d'une ligne */
+    height: auto;
+    text-align: center; /* et qui seront centre */
+  }
+  nav ul {
+    flex-direction: column; /*le nav ul qui va change en colonne au lieu d'une ligne*/
+  }
+  nav ul li {
+    padding: 10px; /* retrecissement du padding */
+  }
+  .carte {
+    grid-template-columns: 1fr 1fr; /* au lieu de 4 on aura deux */
+  }
+}
+/*les style seront appliquer jusqu'a 600px*/
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px; /* changement de la taille du h1 en 24 px */
+  }
+  nav ul li a {
+    font-size: 16px; /*  changement de la taille du li a en 16 px */
+    padding: 10px; /* retrecissement du padding en 10px */
+  }
+  .container {
+    padding: 20px; /* retrecissement du padding en 20px */
+  }
+  .carte {
+    grid-template-columns: 1fr;  /* au lieu de 2 on aura un */
+  }
+}
